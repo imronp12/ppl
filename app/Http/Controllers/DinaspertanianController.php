@@ -7,6 +7,6 @@ class DinaspertanianController extends Controller
 {
     public function dinaspertanian()
     {
-        return view('dinaspertanian.dashboard');
+        return view('dinaspertanian.home');
     }
 }
