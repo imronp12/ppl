@@ -15,12 +15,21 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
 Route::get('/login','AuthController@login');
+Route::post('/postlogin','AuthController@postlogin');
 
+
+
+
+//dinaspertanian
 Route::get('/home', 'HomeController@index')->name('home');
-//dashboard
 Route::get('/dinaspertanian', 'DinaspertanianController@dinaspertanian');
-//pelatihan
-Route::get('dinaspertanian.pelatihan','PelatihanController@pelatihan');
-Route::post('dinaspertanian.pelatihan.create','PelatihanController@create');
+Route::get('dinaspertanian/pelatihan','PelatihanController@index');
+Route::post('/pelatihan/create','PelatihanController@create');
+Route::get('dinaspertanian/pelatihan/{id}/editpelatihan','PelatihanController@edit');
+Route::post('dinaspertanian/pelatihan/{id}/updatepelatihan','PelatihanController@update');
+
+Route::get('dinaspertanian/kelompoktani','KelompoktaniController@index');
+Route::get('dinaspertanian/hasilpanen','HasilpanenController@index');
+Route::get('dinaspertanian/bantuan','BantuanController@index');
+Route::get('dinaspertanian/tabungan','TabunganController@index');
